@@ -32,10 +32,14 @@ body {
   font-family: "Urbanist", sans-serif;
   background: linear-gradient(45deg, #eecfba, #c5dde8);
 }
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+}
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Header
@@ -44,9 +48,16 @@ body {
   margin-bottom: 30px;
 }
 .header__inner {
-  width: 100%;
-  height: 550px;
+  max-width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .background__video {
@@ -59,13 +70,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
 }
 
 .product__name {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
+  text-align: center;
+  margin: 20px 0 40px 0;
 }
 
 .product {
@@ -77,8 +86,10 @@ body {
   font-size: 18px;
   color: #74008b;
 }
+
 .feature__inner {
   margin-top: 30px;
+  line-height: 28px;
 }
 
 .img__tablet-header {
@@ -88,18 +99,25 @@ body {
 
 .product__inner-item {
   display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+  justify-content: space-around;
+
+  padding-bottom: 90px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
 }
 
 .product__feature {
-  width: 350px;
+  /* width: 350px; */
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 44.444%;
+  flex: 0 1 44.444%;
 }
 
 /* Кнопка заказать =========== */
 .button__order {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .btn__order {
@@ -117,14 +135,19 @@ body {
 /* Состав ================= */
 .intro {
   width: 100%;
-  height: 530px;
-  margin-bottom: 60px;
+  height: 100%;
+  margin-bottom: 70px;
 }
 
 .composition {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 40px;
+}
+
+.composition__inner-tablet {
+  max-width: 100%;
 }
 
 .img__tablet-intro {
@@ -472,7 +495,7 @@ body {
 
 @media (max-width: 767px) {
   .header__inner {
-    height: 450px;
+    height: 100%;
   }
 
   .product__name {
@@ -485,6 +508,10 @@ body {
   .product__inner-item {
     margin-bottom: 20px;
   }
+  .feature__inner {
+    line-height: 22px;
+  }
+
   .intro {
     height: 1370px;
   }
@@ -528,7 +555,7 @@ body {
     font-size: 25px;
   }
   .img__tablet-header {
-    width: 70px;
+    width: 80px;
     margin: 0;
   }
 
@@ -536,25 +563,54 @@ body {
     height: auto;
   }
 
+  .product__name {
+    margin-bottom: 12px;
+  }
+  .product {
+    font-size: 30px;
+  }
+
   .product__inner-item {
     display: flex;
     align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
   }
   .product__feature {
     width: 250px;
   }
   .feature__inner {
     margin: 0;
+    line-height: 14px;
   }
   .feature__item {
-    font-size: 15px;
+    font-size: 12px;
   }
   .promo__video {
     width: 550px;
   }
 
+  .btn__order {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .img__tablet-intro {
+    width: 80px;
+  }
+
+  .reviews__img {
+    width: 200px;
+  }
+  .reviews__text {
+    font-size: 17px;
+  }
+
   .description__item {
-    width: 80%;
+    width: 100%;
+  }
+  .description__text {
+    font-size: 16px;
   }
   .features__item {
     width: 100%;
@@ -563,11 +619,24 @@ body {
     display: block;
     text-align: center;
   }
+
+  .features__text-item {
+    font-size: 16px;
+    padding: 0;
+  }
   .product__price {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .product__name-form {
+    font-size: 32px;
+  }
+
+  .timer__discount {
+    font-size: 20px;
+  }
+
   .product__photo-item {
     width: 80px;
   }
@@ -575,9 +644,15 @@ body {
     font-size: 25px;
   }
   .new__price-item {
-    font-size: 30px;
+    font-size: 28px;
   }
 
+  .input__name {
+    padding: 10px;
+  }
+  .input__phone {
+    padding: 10px;
+  }
   .form__input-name:hover::after {
     left: 20%;
   }
